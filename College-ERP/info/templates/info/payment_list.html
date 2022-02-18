@@ -1,0 +1,27 @@
+{% extends 'info/base.html' %}
+    {% load static %}
+
+    {% block content %}
+payments Made for current Month {{cmonth}} year {{cyear}}
+<table class="table">
+    <tr>
+        <th>Teacher</th>
+        <th>AccountNumber</th>
+        <th>Payment_Date</th>
+        <th>salaray</th>
+    </tr>
+    {%for payment in payments%}
+    <tr>
+        <td>{{payment.teacher}}</td>
+        <td>{{payment.accountnumber}}</td>
+        <td>{{payment.month}}</td>
+        <td>{{payment.salary}}</td>
+    </tr>
+
+    {%endfor%}
+</table>
+<hr>
+
+
+
+    {% endblock %}

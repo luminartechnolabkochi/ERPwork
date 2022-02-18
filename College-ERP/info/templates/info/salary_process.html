@@ -1,0 +1,21 @@
+{% extends 'info/base.html' %}
+    {% load static %}
+
+    {% block content %}
+{{employee}}
+<table class="table">
+    <tr>
+        <th>USN:{{employee.id}}</th>
+        <th>Payment For:{{employee}}</th>
+        <th>Department:{{employee.dept}}</th>
+    </tr>
+</table>
+<hr>
+<form action="" method="post">
+  {%csrf_token%}
+  {{form.as_p}}
+  <input type="submit">
+</form>
+
+
+    {% endblock %}

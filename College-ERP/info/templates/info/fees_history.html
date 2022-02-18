@@ -1,0 +1,66 @@
+{% extends 'info/base.html' %}
+    {% load static %}
+
+    {% block content %}
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        <b>FeePayment Details</b></div>
+    <div class="card-body">
+        <div class="table-responsive">
+            {%if transactions %}
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+
+                <tr class="mt-5">
+                    <th>
+                        amount
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        toAcno
+                    </th>
+                </tr>
+
+                {%for payment in transactions %}
+                <tr>
+                    <td>₹{{payment.amount}}</td>
+                    <td>{{payment.date}}</td>
+                    <td>{{payment.to_acno}}</td>
+                </tr>
+                {%endfor%}
+
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            {%else%}
+          <div class="row">
+              <div class="col-4"></div>
+              <div class="col-4">
+                  <h4>No transaction's made till now</h4>
+              </div>
+              <div class="col-4"></div>
+          </div>
+            {%endif%}
+
+                        <hr>
+           <div class="row">
+               <div class="col-4"></div>
+               <div class="col-4"></div>
+               <div class="col-4">
+                <p> Remaing Balance To be Paid:{{student.balance_fee}}</p>
+                   <p>Course for: {{student.get_course}}</p>
+
+               </div>
+
+           </div>
+        </div>
+    </div>
+</div>
+
+
+    {% endblock %}

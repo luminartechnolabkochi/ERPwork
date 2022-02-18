@@ -1,0 +1,23 @@
+{% extends 'info/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        <b>FeePayment</b></div>
+    <div class="card-body">
+        <div class="table-responsive">
+
+
+            <form action="" method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type="submit" value="proceed to pay">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

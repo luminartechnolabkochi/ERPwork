@@ -1,0 +1,27 @@
+{% extends 'info/base.html' %}
+    {% load static %}
+
+    {% block content %}
+<table class="table">
+    <tr>
+        <th>Student</th>
+        <th>Course</th>
+        <th>BalanceAmount</th>
+
+    </tr>
+    {%for collection in collections%}
+    <tr>
+        <td>{{collection.name}}</td>
+        <td>{{collection.get_course}}</td>
+        <td>{{collection.balance_fee}}</td>
+        <td><a href="{%url 'fee_history' collection.USN%}">View history</a></td>
+
+    </tr>
+
+    {%endfor%}
+</table>
+<hr>
+
+
+
+    {% endblock %}
